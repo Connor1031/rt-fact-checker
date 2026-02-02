@@ -3,14 +3,14 @@ backend/venv/
 backend/.env
 __pycache__/
 *.pyc
-.pytest_cache/    # <--- NEW: Created when you run tests
-.coverage         # <--- NEW: In case you check test coverage later
+.pytest_cache/
+.coverage     
 htmlcov/
 
 # --- React Frontend ---
 frontend/node_modules/
 frontend/dist/
-frontend/.env     # <--- NEW: In case you add frontend keys later
+frontend/.env 
 frontend/.env.local
 npm-debug.log*
 yarn-error.log*
@@ -18,5 +18,5 @@ yarn-error.log*
 # --- System & IDEs ---
 .DS_Store         # Mac junk
 Thumbs.db         # Windows junk
-.vscode/          # VS Code settings (optional, but keeps repo clean)
+.vscode/          # VS Code settings 
 .idea/            # PyCharm settings
