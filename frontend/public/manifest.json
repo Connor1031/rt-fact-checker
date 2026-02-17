@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Aegis: Disinformation Dashboard",
+  "version": "1.0",
+  "description": "Real-time AI detection and fact-checking for the casual scroller.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Check with Aegis"
+  },
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*", 
+    "http://localhost:8000/*"
+  ]
+}
