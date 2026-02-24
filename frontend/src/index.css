@@ -1,6 +1,46 @@
+/* frontend/src/index.css */
 body {
   width: 400px;
   height: 600px;
   margin: 0;
   overflow-y: auto;
+  background-color: #121212; /* Deep dark background */
+  color: #e0e0e0; /* Soft off-white text for readability */
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Text Box Styling */
+textarea {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6; /* Blue highlight when typing */
+}
+
+textarea::placeholder {
+  color: #888;
+}
+
+/* Button Styling */
+button {
+  background-color: #3b82f6; /* Bright blue */
+  color: white;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #2563eb; /* Darker blue on hover */
+}
+
+button:disabled {
+  background-color: #374151; /* Grayed out when loading */
+  color: #9ca3af;
+  cursor: not-allowed;
 }
