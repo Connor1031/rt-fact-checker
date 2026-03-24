@@ -44,3 +44,19 @@ button:disabled {
   color: #9ca3af;
   cursor: not-allowed;
 }
+
+/* --- SKELETON LOADER ANIMATION --- */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.skeleton-box {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background-color: #27272a; /* Dark gray matching your theme */
+  border-radius: 4px;
+}
