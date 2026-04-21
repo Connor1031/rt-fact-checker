@@ -1,16 +1,36 @@
 {
   "manifest_version": 3,
-  "name": "Aegis: Dashboard",
+  "name": "AEGIS",
   "version": "1.0",
   "description": "Real-time AI detection and fact-checking.",
   "action": {
-    "default_popup": "index.html",
-    "default_title": "Check with Aegis"
+    "default_title": "Aegis Fact Checker",
+    "default_icon": {
+      "16":  "icons/icon16.png",
+      "48":  "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
   },
   "permissions": [
     "activeTab",
-  "contextMenus",
-    "storage"
+    "contextMenus",
+    "storage",
+    "scripting",
+    "sidePanel"
+  ],
+  "side_panel": {
+    "default_path": "index.html" 
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
   ],
   "background": {
     "service_worker": "background.js"
