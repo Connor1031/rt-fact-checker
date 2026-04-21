@@ -31,6 +31,32 @@ function App() {
     if (savedMode) setScanMode(savedMode);
   }, []);
 
+
+  //live listening for right click
+  useEffect(() => {
+    const handleChromeMessages = (message, sender, sendResponse) => {
+      if (message.action === 'analyze_new_data') {
+        setShowHistory(false);
+        if (message.text) {
+          setInputText(message.text);
+          setImageUrl(null);
+        } else if (message.imageUrl) {
+          setImageUrl(message.imageUrl);
+          setInputText('');
+        }
+      }
+    };
+    if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.onMessage) {
+      chrome.runtime.onMessage.addListener(handleChromeMessages);
+    }
+    return () => {
+      if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.onMessage) {
+        chrome.runtime.onMessage.removeListener(handleChromeMessages);
+      }
+    };
+  }, []);
+
+
   // 2. SAVE STATE TO STORAGE
   useEffect(() => localStorage.setItem('aegis_text', inputText), [inputText]);
   

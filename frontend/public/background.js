@@ -27,7 +27,19 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
   // 1. OPEN THE PANEL IMMEDIATELY
   chrome.sidePanel.open({ windowId: tab.windowId }).catch((err) => console.error(err));
-
+  if (info.selectionText) {
+    chrome.runtime.sendMessage({ 
+      action: 'analyze_new_data', 
+      text: info.selectionText 
+    }).catch(() => {});
+  } 
+  else if (info.srcUrl) {
+    chrome.runtime.sendMessage({ 
+      action: 'analyze_new_data', 
+      imageUrl: info.srcUrl 
+    }).catch(() => {});
+  }
+  
   // 2. SAVE THE DATA
   // Handle Text Scan
   if (info.menuItemId === "verify-aegis-text") {
