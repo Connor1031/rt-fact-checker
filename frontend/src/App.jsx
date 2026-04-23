@@ -357,7 +357,9 @@ function App() {
                                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
       
                                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                                      <strong style={{ color: '#60a5fa', fontSize: '14px' }}>{src.source_name}</strong>
+                                      <a href={src.link} target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa', fontSize: '14px', fontWeight: 'bold', textDecoration: 'underline' }}>
+                                        {src.source_name} ↗
+                                      </a>
                                       
                                       {src.trust_tier === 1 && (
                                         <span style={{ 
@@ -377,11 +379,6 @@ function App() {
                                         </span>
                                       )}
                                     </div>
-                                    
-                                    <a href={src.link} target="_blank" rel="noopener noreferrer" style={{ color: '#154da7', textDecoration: 'none', fontSize: '12px' }}>
-                                      View Source ↗
-                                    </a>
-                                    
                                   </div>
                                   
                                   <p style={{ margin: '0 0 6px 0', color: '#d4d4d8' }}>{src.source_summary}</p>

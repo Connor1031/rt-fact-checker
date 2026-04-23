@@ -86,6 +86,11 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
           aegis_context_text: pageText,
           aegis_context_image: null
         }); 
+        chrome.runtime.sendMessage({ 
+          action: 'analyze_new_data', 
+          text: pageText 
+        }).catch(() => {});
+        
       } else {
         console.error("Failed to extract text from the page.");
       }
