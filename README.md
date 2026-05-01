@@ -1,4 +1,5 @@
 # Aegis: Real Time Fact Checker (Chrome Extension)
+<img width="383" height="467" alt="image" src="https://github.com/user-attachments/assets/98bca86f-3396-4946-a3b5-de5f16787e4b" />
 
 Aegis is a real-time AI-detection and fact-checking Chrome Extension designed for the "casual scroller." By integrating directly into the browser, Aegis reduces the friction of digital literacy, allowing users to verify text, images, and full articles with a simple right-click.
 
